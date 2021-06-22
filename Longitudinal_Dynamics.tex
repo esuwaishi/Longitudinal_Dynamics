@@ -367,28 +367,43 @@ $\phi(n+1) = \omega_{RF}(n+1) \tau(n+1)$から、この関係を用いると、
 
 以上より、シンクロトロンの縦方向の運動について、周回毎の差分方程式は以下のようになる。
 %
-\begin{align}
-  \begin{split}
-     &\delta_p(n+1) = \delta_p(n) + \frac{e V}{\beta_s^2 E_s}(\sin\phi(n) -\sin\phi_s) \\
-     &\phi(n+1) = \phi(n) + 2\pi h \eta \delta_p(n+1)
+\begin{equation}
+  \left\{
+  \begin{aligned}
+    \delta_p(n+1) &= \delta_p(n) + \frac{e V}{\beta_s^2 E_s}(\sin\phi(n) -\sin\phi_s) \\
+    \phi(n+1) &= \phi(n) + 2\pi h \eta \delta_p(n+1)
     \label{map}
-  \end{split}
-\end{align}
+  \end{aligned}
+  \right.
+\end{equation}
 %
 これらの式より、$(\phi(n),\,\delta_p(n))$の値を順次求めることで縦方向の運動を調べることができる (particle tracking simulation)。
+
+式(\ref{map})では、最初に述べたように加速空洞がリングの一箇所にまとまって設置されている場合を考えています。しかし、実際には加速空洞がリングのあ数カ所に分かれて設置されている場合もありますし、異なる空洞間でのRF位相変化も一様ではないかもしれません。しかし、シンクロトロン運動は通常遅いので、ハミルトニアン形式とマッピング方程式は等価に扱って問題ありません。写像式は簡単なので、通常、粒子追跡計算に使用されます。
+
+RF空洞を加速器内の1つの塊状の要素として扱っていることを指摘しておきたいと思います。実際には、RF空洞は不均一に配置されている可能性があります。また、異なる空洞間でのRFの位相変化も一様ではないかもしれません。シンクロトロンの動きは通常遅いので、ハミルトニアン形式とマッピング方程式は等価です。写像式は簡単なので、通常、粒子追跡計算に使用されます。
 
 \section{The Synchrotron Mapping Equation}
 
 \begin{equation}
   \left\{
     \begin{aligned}
-      \delta_{p, n+1} &= \delta_{p, n} + \frac{e V}{\beta_s^2 E_s}(\sin\phi_n -\sin\phi_s) \\
-      \phi_{n+1} &= \phi_n + 2\pi h \eta \delta_{p, n+1}
+      \delta_{n+1} &= \delta_{n} + \frac{e V}{\beta_s^2 E_s}(\sin\phi_n -\sin\phi_s) \\
+      \phi_{n+1} &= \phi_n + 2\pi h \eta \delta_{n+1}
     \end{aligned}
   \right.
 \end{equation}
 
 \section{Standard Map}
+
+\begin{equation}
+  \left\{
+    \begin{aligned}
+      p_{n+1} &= p_{n} - K \sin\theta_n \\
+      \theta_{n+1} &= \theta_n + p_{n+1}
+    \end{aligned}
+  \right.
+\end{equation}
 
 \section{Differential Equations for Longitudinal Motion in a Synchrotron}
 $\phi$と$\delta_p$のリング一周あたりの変化が十分小さい時、離散的な差分方程式である (\ref{map}) は、連続的な微分方程式に書き換えることができる。この場合、$\phi$と$\delta_p$のリング一周あたりの変化はそれぞれ、近似的に
