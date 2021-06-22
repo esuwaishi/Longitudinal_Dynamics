@@ -1,0 +1,75 @@
+\documentclass[]{jlreq}
+
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{bm}
+
+\renewcommand{\figurename}{Fig.~}
+\renewcommand{\tablename}{Table~}
+
+\begin{document}
+\title{Standard Map}
+\author{Shin-ichi YOSHIMOTO}
+\maketitle
+\tableofcontents
+\clearpage
+
+\section{Kicked rotator}
+%
+\begin{equation}
+    \mathcal{H}(\theta, p, t) = \frac{1}{2}p^2 + K \cos\theta \sum_{n=-\infty}^{\infty}\delta(t - n T)
+\end{equation}
+%
+\begin{align}
+    \frac{dp}{dt} &= -\frac{\partial \mathcal{H}}{\partial \theta} = K \sin\theta \sum_{n=-\infty}^{\infty}\delta(t - n T)\\
+    \frac{d\theta}{dt} &= \frac{\partial H}{\partial p} = p
+\end{align}
+%
+\section{Standard Map}
+%
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        p_{n+1} &= p_n + K\sin\theta_n \\
+        \theta_{n+1} &= \theta_n + p_{n+1}
+        \label{standrd_map}
+    \end{aligned}
+    \right.
+\end{equation}
+%
+演算子$\tilde{h}$を
+%
+\begin{equation}
+    \tilde{h}\theta_n \equiv K \sin\theta_n
+\end{equation}
+%
+と定義すると、式(\ref{standrd_map})は
+%
+\begin{equation}
+    \begin{pmatrix}
+        p_{n+1}\\
+        \theta_{n+1}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        1 & \tilde{h} \\
+        1 & 1+\tilde{h}
+    \end{pmatrix}
+    \begin{pmatrix}
+        p_n \\
+        \theta_n
+    \end{pmatrix}
+\end{equation}
+%
+と書ける。
+
+変換$(p_n, \theta_n)\mapsto (p_{n+1}, \theta_{n+1})$に対するJacobianは、
+%
+\begin{thebibliography}{9}
+    \bibitem{oho}
+    過去のOHOセミナーの教科書
+    \bibitem{Ichikawa}
+    市川芳彦, プラズマにおける非線形現象の諸問題 (3), 核融合研究, 1988, 59巻, 5号, p. 362-391.
+  \end{thebibliography}
+%
+\end{document}
