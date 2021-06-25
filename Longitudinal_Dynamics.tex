@@ -388,11 +388,40 @@ RF空洞を加速器内の1つの塊状の要素として扱っていること�
 \begin{equation}
   \left\{
     \begin{aligned}
-      \delta_{n+1} &= \delta_{n} + \frac{e V}{\beta_s^2 E_s}(\sin\phi_n -\sin\phi_s) \\
-      \phi_{n+1} &= \phi_n + 2\pi h \eta \delta_{n+1}
+      \phi(k+1) &= \phi(k) + \frac{2\pi h \eta }{\beta^2 E_s}[E(k+1)-E_s] \\
+      E(k+1) &= E(k)+ e V \sin\phi(k)
     \end{aligned}
   \right.
 \end{equation}
+%
+$\delta \phi(k) = \phi(k) -\phi_s, \; \delta E(k) = E(k)-E_s$とおくと、線形化方程式は
+%
+\begin{equation}
+  \begin{bmatrix}
+    \delta\phi\\
+    \delta E
+  \end{bmatrix}
+  _{k+1} = M
+  \begin{bmatrix}
+    \delta\phi\\
+    \delta E
+  \end{bmatrix}
+  _k
+\end{equation}
+
+\begin{equation}
+  M =
+  \begin{pmatrix}
+    \frac{\partial\phi(k+1)}{\partial\phi} & \frac{\partial\phi(k+1)}{\partial E} \\
+    \frac{\partial E(k+1)}{\partial\phi} & \frac{\partial E(k+1)}{\partial E}
+  \end{pmatrix}
+  _{\phi_s, E_s} =
+  \begin{pmatrix}
+    1+\frac{2\pi h \eta}{\beta^2 E_s} e V \cos\phi_s & \frac{2\pi h\eta}{\beta_s E_s} \\
+    e V \cos\phi_s & 1
+  \end{pmatrix}
+\end{equation}
+
 
 \section{Standard Map}
 
@@ -612,6 +641,8 @@ $\Delta\phi = \phi - \phi_s$が非常に小さい時、
 \begin{thebibliography}{9}
   \bibitem{oho}
   過去のOHOセミナーの教科書 \url{http://accwww2.kek.jp/oho/index.html}
+  \bibitem{Chao2020}
+  Alexander Wu Chao. Lectures On Accelerator Physics (p.v). World Scientific Publishing Company. 
 \end{thebibliography}
 %
 \end{document}
