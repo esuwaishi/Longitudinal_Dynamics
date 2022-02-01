@@ -4,6 +4,8 @@
 \usepackage{graphicx}
 \usepackage[pdfencoding=auto]{hyperref}
 \usepackage{amsmath,amssymb,amsthm}
+\usepackage{siunitx}
+\usepackage{physics}
 \usepackage{bm}
 \usepackage{booktabs}
 %\usepackage{subfig}
@@ -11,7 +13,6 @@
 \usepackage{url}
 \usepackage{cite}
 \usepackage{ulem}
-\usepackage{siunitx}
 \usepackage{float}
 \usepackage{tcolorbox}
 \tcbuselibrary{breakable}
@@ -433,6 +434,13 @@ $\delta \phi(k) = \phi(k) -\phi_s, \; \delta E(k) = E(k)-E_s$とおくと、線�
     \end{aligned}
   \right.
 \end{equation}
+
+\section{Physics package}
+\begin{align}
+  \sin[2](x) \\
+  \qty(\frac{3}{4})^n \\
+  \vb{F} = \vb{E} \times \vb{B}
+\end{align}
 
 \section{Differential Equations for Longitudinal Motion in a Synchrotron}
 $\phi$と$\delta_p$のリング一周あたりの変化が十分小さい時、離散的な差分方程式である (\ref{map}) は、連続的な微分方程式に書き換えることができる。この場合、$\phi$と$\delta_p$のリング一周あたりの変化はそれぞれ、近似的に
